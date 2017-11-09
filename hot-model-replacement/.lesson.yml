@@ -1,0 +1,9 @@
+---
+title: "Hot Model Replacement"
+type: "exercise"
+description: "Get a website running using Webpack"
+tags: "javascript, webpack"
+ignore:
+- "node_modules/"
+- "hot-model-replacement.md"
+
