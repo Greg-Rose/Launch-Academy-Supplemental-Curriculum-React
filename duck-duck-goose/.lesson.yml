@@ -1,0 +1,8 @@
+---
+title: "Duck Duck Goose"
+type: "exercise"
+description: "Use CommonJS modules and NPM to get the code to work"
+tags: "npm, commonjs"
+ignore:
+- "node_modules/"
+- "duck-duck-goose.md"
