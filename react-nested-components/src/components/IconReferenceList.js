@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from './Icon';
 
 const IconReferenceList = props => {
   let articleDescription=`These are written lessons that will walk you through
@@ -10,18 +11,42 @@ const IconReferenceList = props => {
    put two or three of the new concepts you've learned together.
    You should submit solutions to all of these via ET!`;
 
+  let iconInfo = [
+    {
+      key: "1",
+      iconName: "Article",
+      fontAwesomeSymbol: 'fa-file-text-o',
+      description: "Article Description"
+    },
+    {
+      key: "2",
+      iconName: "Exercise",
+      fontAwesomeSymbol: 'fa-heartbeat',
+      description: "Exercise Description"
+    },
+    {
+      key: "3",
+      iconName: "Challenge",
+      fontAwesomeSymbol: 'fa-puzzle-piece',
+      description: "Challenge Description"
+    }
+  ];
+
+  let icons = iconInfo.map(icon => {
+    return(
+      <Icon
+        key={icon.key}
+        iconName={icon.iconName}
+        fontAwesomeSymbol={icon.fontAwesomeSymbol}
+        description={icon.description}
+      />
+    )
+  })
+
   return(
     <div>
       <ul>
-        <li onClick={() => alert(articleDescription)} >
-          <i className="fa fa-2x fa-fw fa-file-text-o" /> - Article
-        </li>
-        <li onClick={() => alert(exerciseDescription)} >
-          <i className="fa fa-2x fa-fw fa-heartbeat" /> - Exercise
-        </li>
-        <li onClick={() => alert(challengeDescription)} >
-          <i className="fa fa-2x fa-fw fa-puzzle-piece" /> - Challenge
-        </li>
+        {icons}
       </ul>
     </div>
   );

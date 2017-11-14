@@ -1,7 +1,7 @@
 import React from 'react';
 import IconReferenceList from './IconReferenceList';
 
-const IconGuide = props => {
+const IconGuide = (props) => {
 
   return(
     <div>
