@@ -13,7 +13,7 @@ class App extends React.Component {
     return (
       <ul className="App row">
         <PlaylistCollection playlists={data.playlists} />
-        <SongCollection />
+        <SongCollection songs={data.songs} />
       </ul>
     );
   }
