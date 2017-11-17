@@ -1,0 +1,26 @@
+body {
+  margin: 50px;
+}
+
+#app {
+  border-style: solid;
+  border-color: $border;
+  background-color: $background;
+}
+
+h1 {
+  color: $main-text
+}
+
+li {
+  color: $sub-text
+}
+
+ul {
+  list-style: none;
+}
+
+.selected {
+  background-color: $highlight;
+  width: 100%
+}
