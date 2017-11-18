@@ -4,6 +4,11 @@ import Playlist from './Playlist';
 const PlaylistCollection = props => {
   let playlistComponents = props.playlists.map(playlist => {
     let className;
+
+    let playlistSelect = () => {
+      props.handleSelect(playlist.id);
+    };
+
     if (playlist.id == props.selectedPlaylistId) {
       className = "selected";
     }
@@ -13,6 +18,7 @@ const PlaylistCollection = props => {
         name={playlist.name}
         description={playlist.description}
         className={className}
+        handlePlaylistSelect={playlistSelect}
       />
     )
   })
