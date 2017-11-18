@@ -6,7 +6,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedPlaylistId: props.data.selectedPlaylistId
+      selectedPlaylistId: props.data.selectedPlaylistId,
+      selectedSongId: null
     };
   }
 
@@ -23,6 +24,10 @@ class App extends React.Component {
       this.setState({ selectedPlaylistId: id });
     };
 
+    let selectSong = (id) => {
+      this.setState({ selectedSongId : id });
+    };
+
     return (
       <ul className="App row">
         <PlaylistCollection
@@ -30,7 +35,11 @@ class App extends React.Component {
           selectedPlaylistId={this.state.selectedPlaylistId}
           handleSelect={selectPlaylist}
         />
-        <SongCollection songs={currentSongs} />
+        <SongCollection
+          songs={currentSongs}
+          selectedSongId={this.state.selectedSongId}
+          handleSelect={selectSong}
+        />
       </ul>
     );
   }
