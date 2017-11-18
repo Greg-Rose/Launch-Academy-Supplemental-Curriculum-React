@@ -5,6 +5,9 @@ import SongCollection from '../components/SongCollection';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      selectedPlaylistId: props.data.selectedPlaylistId
+    };
   }
 
   render() {
@@ -18,7 +21,7 @@ class App extends React.Component {
 
     return (
       <ul className="App row">
-        <PlaylistCollection playlists={data.playlists} selectedPlaylistId={data.selectedPlaylistId} />
+        <PlaylistCollection playlists={data.playlists} selectedPlaylistId={this.state.selectedPlaylistId} />
         <SongCollection songs={currentSongs} />
       </ul>
     );
