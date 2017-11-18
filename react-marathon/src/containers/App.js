@@ -19,9 +19,17 @@ class App extends React.Component {
       return selectedPlaylist.songs.includes(song.id);
     });
 
+    let selectPlaylist = (id) => {
+      this.setState({ selectedPlaylistId: id });
+    };
+
     return (
       <ul className="App row">
-        <PlaylistCollection playlists={data.playlists} selectedPlaylistId={this.state.selectedPlaylistId} />
+        <PlaylistCollection
+          playlists={data.playlists}
+          selectedPlaylistId={this.state.selectedPlaylistId}
+          handleSelect={selectPlaylist}
+        />
         <SongCollection songs={currentSongs} />
       </ul>
     );
