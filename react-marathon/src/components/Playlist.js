@@ -2,7 +2,7 @@ import React from 'react';
 
 const Playlist = props => {
   let handleClick = () => {
-    alert(`You've clicked ${props.name}`);
+    props.handlePlaylistSelect();
   };
 
   return (
