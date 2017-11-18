@@ -13,7 +13,7 @@ class App extends React.Component {
   render() {
     let data = this.props.data;
     let selectedPlaylist = data.playlists.find(playlist => {
-      return playlist.id == data.selectedPlaylistId;
+      return playlist.id == this.state.selectedPlaylistId;
     });
     let currentSongs = data.songs.filter(song => {
       return selectedPlaylist.songs.includes(song.id);
