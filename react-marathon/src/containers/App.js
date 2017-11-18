@@ -12,7 +12,7 @@ class App extends React.Component {
 
     return (
       <ul className="App row">
-        <PlaylistCollection playlists={data.playlists} />
+        <PlaylistCollection playlists={data.playlists} selectedPlaylistId={data.selectedPlaylistId} />
         <SongCollection songs={data.songs} />
       </ul>
     );
