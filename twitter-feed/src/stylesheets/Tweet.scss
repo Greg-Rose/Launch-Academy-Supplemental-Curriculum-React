@@ -1,0 +1,33 @@
+/* YOUR STYLING HERE */
+
+.tweet {
+  background-color: white;
+  border: 3px solid black;
+  margin-bottom: 1px;
+}
+
+.buttons i {
+  color: $grey;
+  margin-right: 60px;
+  cursor: pointer;
+}
+
+.buttons i.favorited {
+  color: $green;
+}
+
+.buttons i.retweeted {
+  color: $red;
+}
+
+.tweet p {
+  margin-bottom: 5px;
+}
+
+.user-info p {
+  font-size: 14px;
+}
+
+.username, .date {
+  color: $grey;
+}
