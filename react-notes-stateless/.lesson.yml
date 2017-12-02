@@ -1,0 +1,10 @@
+---
+title: "React Notes Stateless"
+type: "challenge"
+description: "Render a static Notes application using React stateless components"
+tags: "javascript, react, stateless components"
+behaviors:
+  - react_on_node
+ignore:
+- "node_modules/"
+- "react-notes-stateless.md"
