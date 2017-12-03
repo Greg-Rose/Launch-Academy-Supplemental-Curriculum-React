@@ -1,12 +1,42 @@
 /* YOUR STYLING HERE */
 
-#left-pane, #middle-pane, #right-pane {
+.main-div {
+  margin-top: 30px;
+}
+
+#left-pane, #right-pane {
   background-color: #F6F6F6;
   border: 1px solid grey;
   min-height: 50vh;
 }
 
+#left-pane {
+  position: relative;
+}
+
 .input-group-button i {
   font-size: 30px;
   margin-right: 10px;
+}
+
+.folder-form-div {
+  position: absolute;
+  bottom: 0;
+}
+
+#notes-list-pane, #note-form-pane {
+  border: 1px solid grey;
+}
+
+.note-list {
+  min-height: 50vh;
+}
+
+.note {
+  border: 1px solid grey;
+  margin: 1px;
+}
+
+.test {
+  min-height: 50vh;
 }
