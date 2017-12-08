@@ -1,11 +1,15 @@
 import React from 'react';
+import QuestionsList from './QuestionsList';
 
-class App extends React.Component {
-  render() {
-    return(
-      <div></div>
-    )
-  }
+const App = props => {
+
+  return(
+    <div>
+      <h1>We're Here to help</h1>
+
+      <QuestionsList questionsData={props.data} />
+    </div>
+  )
 }
 
 export default App;
