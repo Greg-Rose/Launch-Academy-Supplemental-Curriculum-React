@@ -28,10 +28,6 @@
   border: 1px solid grey;
 }
 
-.note-list {
-  min-height: 50vh;
-}
-
 .note {
   border: 1px solid grey;
   margin: 1px;
@@ -39,4 +35,35 @@
 
 .test {
   min-height: 50vh;
+}
+
+.columns:last-child:not(:first-child) {
+  float: left;
+}
+
+.note-list-controls {
+  background-color: #E7E5E7;
+}
+
+.note-list-controls .input-group-label {
+  background-color: white;
+  border-radius: 50px 0 0 50px;
+  border-right: none;
+}
+
+.note-list-controls .input-group-field {
+  border-left: none;
+  border-radius: 0 50px 50px 0;
+  background-color: white;
+}
+
+.note-list-controls .button {
+  background-color: #F5F5F5;
+  border-color: black;
+  color: black;
+  display: inline-block;
+}
+
+.search-form {
+  display: inline-block;
 }
