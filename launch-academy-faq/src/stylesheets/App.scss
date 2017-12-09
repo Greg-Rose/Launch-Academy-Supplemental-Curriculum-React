@@ -8,3 +8,42 @@ h1 {
   color: #61BCCA;
   text-align: center;
 }
+
+.faq-btn {
+  background-color: #1D2224;
+  border: 1px solid black;
+  box-shadow: 3px 3px black;
+  color: white;
+  display: inline-block;
+  height: 30px;
+  cursor: pointer;
+  text-align: center;
+  width: 30px;
+}
+
+.faq-btn.selected {
+  background-color: #95CB43;
+  color: black;
+}
+
+h6 {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.questions {
+  margin-bottom: 20px;
+}
+
+hr {
+  border-color: black;
+}
+
+.questions p {
+  display: none;
+  margin-top: 20px;
+}
+
+p.selected {
+  display: block;
+}
