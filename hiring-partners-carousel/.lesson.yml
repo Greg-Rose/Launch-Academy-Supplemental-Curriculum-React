@@ -1,0 +1,8 @@
+---
+title: "Hiring Partners Carousel"
+type: "exercise"
+description: "Rebuild the hiring partners carousel in React"
+tags: "javascript, react, component lifecycle"
+ignore:
+- "node_modules/"
+- "hiring-partners-carousel.md"
