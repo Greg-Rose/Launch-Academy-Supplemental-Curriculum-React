@@ -1,0 +1,38 @@
+.topnav {
+  overflow: hidden;
+  display: inline-flex;
+  margin: auto;
+}
+
+.topnav button {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav button.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+body {
+  text-align: center;
+  background-image: url(https://i.pinimg.com/736x/2c/3e/4b/2c3e4b5d02556650294e3aba3aec5023--concrete-texture-seamless-concrete-wall-texture.jpg);
+  font-weight: bold;
+  margin-top: 8%;
+}
+
+.picture {
+  margin: auto;
+  text-align: left;
+  border: 10px solid #3d1e01;
+  padding-top: 45%;
+  width: 36%;
+  height: 400px;
+  padding: 40px;
+  color: #6b6666;
+  background: url(https://www.smashingmagazine.com/wp-content/uploads/images/art-paintings-designers/warhol_today.jpg)no-repeat center center;
+}

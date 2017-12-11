@@ -1,0 +1,7 @@
+---
+title: "React Component Lifecycle"
+type: "article"
+behaviors:
+  - react_on_node
+description: "Learn about the React component lifecycle"
+tags: "javascript, react, component lifecycle"
