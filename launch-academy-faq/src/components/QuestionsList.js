@@ -5,8 +5,27 @@ class QuestionsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      questions: [],
       selectedQuestion: null
     };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/api/v1/questions')
+      .then(response => {
+        if(response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+              error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        this.setState({questions: body});
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
@@ -18,7 +37,7 @@ class QuestionsList extends React.Component {
       }
     };
 
-    let questions = this.props.questionsData.map(questionData => {
+    let questions = this.state.questions.map(questionData => {
       let className;
 
       let questionSelect = () => {

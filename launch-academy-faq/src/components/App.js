@@ -7,13 +7,11 @@ class App extends React.Component {
   }
 
   render() {
-    let data = this.props.data;
-
     return(
       <div>
         <h1>We're Here to help</h1>
 
-        <QuestionsList questionsData={data} />
+        <QuestionsList />
       </div>
     )
   }
