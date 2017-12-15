@@ -6,7 +6,7 @@ const Folder = props => {
 
   return (
     <div>
-      <div className="large-12 columns">
+      <div className={props.className + " large-12 columns"} onClick={props.handler}>
         <h5>{name}</h5>
       </div>
     </div>

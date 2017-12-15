@@ -42,7 +42,7 @@ const App = props => {
     <div className="main-div">
       <div className="row">
         <div className="large-4 columns" id="left-pane">
-          <FolderList folders={data.folders} />
+          <FolderList folders={data.folders} selectedFolderId={data.selectedFolderId} />
           <FolderForm />
         </div>
         <div className="large-8 columns" id="right-pane">

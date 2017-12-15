@@ -7,11 +7,20 @@
 #left-pane, #right-pane {
   background-color: #F6F6F6;
   border: 1px solid grey;
-  min-height: 50vh;
+  height: 500px;
 }
 
 #left-pane {
+  padding-top: 10px;
   position: relative;
+}
+
+#left-pane .selected {
+  background-color: $blue;
+}
+
+#left-pane .selected h5 {
+  color: white;
 }
 
 .input-group-button i {
@@ -26,6 +35,7 @@
 
 #notes-list-pane, #note-form-pane {
   border: 1px solid grey;
+  height: 499px;
 }
 
 .note {
@@ -33,8 +43,8 @@
   margin: 1px;
 }
 
-.test {
-  min-height: 50vh;
+.note.selected {
+  background-color: $yellow;
 }
 
 .columns:last-child:not(:first-child) {
@@ -62,8 +72,41 @@
   border-color: black;
   color: black;
   display: inline-block;
+  margin-bottom: 5px;
 }
 
 .search-form {
   display: inline-block;
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 65%;
+}
+
+.search-form .input-group {
+  margin: 0;
+}
+
+#note-form-pane {
+  height: 100%;
+  padding: 0;
+}
+
+#note-form-pane h5 {
+  display: inline-block;
+  margin: 10px;
+}
+
+#note-form-pane button {
+  display: inline-block;
+  margin: 5px;
+}
+
+#note-form-pane textarea {
+  height: 429px;
+  margin-bottom: 0;
+}
+
+.note-form-header {
+  height: 68px;
+  background-color: #E7E5E7;
 }

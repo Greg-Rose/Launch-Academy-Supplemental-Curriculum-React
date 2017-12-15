@@ -3,10 +3,21 @@ import Folder from './Folder';
 
 const FolderList = props => {
   let folders = props.folders.map(folderData => {
+    let className;
+    if (folderData.id == props.selectedFolderId) {
+      className = "selected";
+    }
+
+    let handleClick = () => {
+      alert("Folder clicked");
+    };
+
     return (
       <Folder
         key={folderData.id}
         folder={folderData}
+        className={className}
+        handler={handleClick}
       />
     )
   });

@@ -1,11 +1,15 @@
 import React from 'react';
 
 const NoteListControls = props => {
+  let handleClick = (event) => {
+    event.preventDefault();
+    alert("Note created");
+  };
 
   return (
     <div className="row">
       <div className="note-list-controls">
-        <a className="button" href="#">
+        <a className="button" href="#" onClick={handleClick}>
           <i className="fa fa-sticky-note-o" aria-hidden="true"></i>
           New Note
         </a>
