@@ -2,7 +2,14 @@ import React from 'react';
 import Note from './Note';
 
 const NoteList = props => {
-  let notes = props.notes.map(noteData => {
+
+  let notes = props.notes;
+
+  if(props.searchText.length > 0) {
+    notes = notes.filter(noteData => noteData.body.toLowerCase().includes(props.searchText));
+  }
+
+  let outputNotes = notes.map(noteData => {
     let className;
     if (noteData.id == props.selectedNoteId) {
       className = "selected";
@@ -24,7 +31,7 @@ const NoteList = props => {
 
   return (
     <div className="row note-list">
-      {notes}
+      {outputNotes}
     </div>
   )
 };

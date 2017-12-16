@@ -8,20 +8,9 @@ class NotesSection extends React.Component {
     super(props);
     this.state = {
       notes: [],
-      selectedNoteId: null
+      selectedNoteId: null,
+      searchText: ''
     };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    // let notes = this.state.notes.filter(noteData => nextProps.notes.includes(noteData.id));
-    // let selectedNote = notes[0];
-    // if(selectedNote == undefined) {
-    //   selectedNote = null;
-    // } else {
-    //   selectedNote = selectedNote.id;
-    // }
-    //
-    // this.setState({selectedNoteId: selectedNote});
   }
 
   render() {
@@ -42,8 +31,11 @@ class NotesSection extends React.Component {
         updatedAt: formattedDated
       };
 
+      let notes = this.state.notes;
+      notes.push(newNote);
+
       this.setState({
-        notes: [...this.state.notes, newNote],
+        notes: notes,
         selectedNoteId: newNote.id
       });
 
@@ -73,17 +65,34 @@ class NotesSection extends React.Component {
       this.props.removeNoteFromFolder(noteId);
     };
 
+    let handleSearch = (searchText) => {
+      this.setState({
+        searchText: searchText.toLowerCase()
+      });
+
+      if(this.state.searchText.length > 0) {
+        notes = notes.filter(noteData => noteData.body.toLowerCase().includes(this.state.searchText));
+        if(notes.length) {
+          this.setState({selectedNoteId: notes[0].id});
+        } else {
+          this.setState({selectedNoteId: null});
+        }
+      }
+    };
+
     let notes = this.state.notes.filter(noteData => this.props.notes.includes(noteData.id));
+
     let selectedNote = notes.find(noteData => noteData.id == this.state.selectedNoteId);
 
     return (
       <div className="row notes-section">
         <div className="large-6 columns" id="notes-list-pane">
-          <NoteListControls addNote={addNote} />
+          <NoteListControls addNote={addNote} searchHandler={handleSearch} />
           <NoteList
             notes={notes}
             selectedNoteId={this.state.selectedNoteId}
             selectNoteHandler={selectNoteHandler}
+            searchText={this.state.searchText}
           />
         </div>
         <div className="large-6 columns" id="note-form-pane">

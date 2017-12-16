@@ -6,6 +6,11 @@ const NoteListControls = props => {
     props.addNote();
   };
 
+  let handleSearch = () => {
+    let text = document.getElementById('searchInput').value;
+    props.searchHandler(text);
+  };
+
   return (
     <div className="row">
       <div className="note-list-controls">
@@ -18,7 +23,13 @@ const NoteListControls = props => {
             <span className="input-group-label">
               <i className="fa fa-search" aria-hidden="true"></i>
             </span>
-            <input className="input-group-field" type="text"></input>
+            <input
+              className="input-group-field"
+              id="searchInput"
+              type="text"
+              onChange={handleSearch}
+            >
+            </input>
           </div>
         </div>
       </div>

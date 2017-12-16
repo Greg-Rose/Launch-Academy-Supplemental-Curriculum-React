@@ -4,8 +4,10 @@ const FolderForm = props => {
   let handleClick = (event) => {
     event.preventDefault();
     let newName = document.getElementById('new-folder-input');
-    props.addFolder(newName.value);
-    newName.value = '';
+    if(newName.value.trim().length) {
+      props.addFolder(newName.value);
+      newName.value = '';
+    }
   };
 
   return (
