@@ -2,6 +2,9 @@ import React from 'react';
 
 const Note = props => {
   let body = props.note.body;
+  if(body.length == 0) {
+    body = "New Note";
+  }
   let date = props.note.updatedAt;
 
   if(body.length > 35) {

@@ -44,6 +44,27 @@ class App extends React.Component {
       selectedFoldersNotes = this.state.folders.find(folder => folder.id === this.state.selectedFolderId).notes;
     }
 
+    let addNoteToFolder = (noteId) => {
+      let index = this.state.folders.findIndex((folder) => {
+        return folder.id === this.state.selectedFolderId;
+      });
+      let folders = this.state.folders;
+      folders[index].notes.push(noteId);
+      this.setState({folders: folders});
+    };
+
+    let removeNoteFromFolder = (noteId) => {
+      let index = this.state.folders.findIndex((folder) => {
+        return folder.id === this.state.selectedFolderId;
+      });
+      let folders = this.state.folders;
+      let newNotes = folders[index].notes.filter(note => note.id != noteId);
+      folders[index].notes = newNotes;
+      this.setState({
+        folders: folders,
+      });
+    };
+
     return (
       <div className="main-div">
         <div className="row">
@@ -52,7 +73,11 @@ class App extends React.Component {
             <FolderForm addFolder={addFolder} />
           </div>
           <div className="large-8 columns" id="right-pane">
-            <NotesSection notes={selectedFoldersNotes} />
+            <NotesSection
+              notes={selectedFoldersNotes}
+              addNoteToFolder={addNoteToFolder}
+              removeNoteFromFolder={removeNoteFromFolder}
+            />
           </div>
         </div>
       </div>

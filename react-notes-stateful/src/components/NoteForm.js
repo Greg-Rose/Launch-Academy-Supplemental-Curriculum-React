@@ -1,37 +1,49 @@
 import React from 'react';
 
-const NoteForm = props => {
-  let noteDate;
-  let noteBody;
-  props.notes.map(noteData => {
-    if (noteData.id == props.selectedNoteId) {
-      noteDate = noteData.updatedAt;
-      noteBody = noteData.body;
+class NoteForm extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidUpdate() {
+    if(this.props.note != undefined) {
+      document.getElementById('note-textarea').value = this.props.note.body;
+      document.getElementById('form-date').innerHTML = this.props.note.updatedAt;
     }
-  });
+  }
 
-  let handleUpdate = (event) => {
-    event.preventDefault();
-    alert("Note updated");
-  };
+  render() {
+    let noteDate;
+    let noteBody;
+    if(this.props.note != undefined) {
+      noteDate = this.props.note.updatedAt;
+      noteBody = this.props.note.body;
+    }
 
-  let handleDelete = (event) => {
-    event.preventDefault();
-    alert("Note deleted");
-  };
-  if (props.notes.length) {
-    return (
-      <div>
-        <div className="note-form-header">
-          <h5>Updated on {noteDate}</h5>
-          <button type="button" className="button" onClick={handleUpdate}>Update</button>
-          <button type="button" className="button" onClick={handleDelete}>Delete</button>
+    let handleUpdate = (event) => {
+      event.preventDefault();
+      let updatedNoteBody = document.getElementById('note-textarea').value;
+      this.props.updateNoteHandler(updatedNoteBody);
+    };
+
+    let handleDelete = (event) => {
+      event.preventDefault();
+      this.props.deleteNoteHandler();
+    };
+    if (this.props.note != undefined) {
+      return (
+        <div>
+          <div className="note-form-header">
+            <h5>Updated on <span id="form-date">{noteDate}</span></h5>
+            <button type="button" className="button" onClick={handleUpdate}>Update</button>
+            <button type="button" className="button" onClick={handleDelete}>Delete</button>
+          </div>
+          <textarea defaultValue={noteBody} id="note-textarea"></textarea>
         </div>
-        <textarea defaultValue={noteBody}></textarea>
-      </div>
-    )
-  } else {
-    return (<div />)
+      )
+    } else {
+      return (<div />)
+    }
   }
 };
 

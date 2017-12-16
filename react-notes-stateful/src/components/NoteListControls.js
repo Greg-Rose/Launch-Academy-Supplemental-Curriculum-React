@@ -3,7 +3,7 @@ import React from 'react';
 const NoteListControls = props => {
   let handleClick = (event) => {
     event.preventDefault();
-    alert("Note created");
+    props.addNote();
   };
 
   return (

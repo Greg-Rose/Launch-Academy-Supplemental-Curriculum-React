@@ -9,7 +9,7 @@ const NoteList = props => {
     }
 
     let handleClick = () => {
-      alert("Note clicked");
+      props.selectNoteHandler(noteData.id);
     };
 
     return (
