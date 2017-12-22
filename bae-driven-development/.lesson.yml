@@ -1,0 +1,9 @@
+---
+title: "B.A.E. Driven Development"
+type: "challenge"
+description: "Create a chat bot through BDD"
+tags: "javascript, karma, jasmine"
+ignore:
+- "node_modules/"
+- "coverage/"
+- bae-driven-development.md
