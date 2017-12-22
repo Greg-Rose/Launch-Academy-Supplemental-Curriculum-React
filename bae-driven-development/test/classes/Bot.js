@@ -6,7 +6,7 @@ import Bot from 'classes/Bot';
 import PredeterminedResponse from 'classes/PredeterminedResponse';
 import User from 'classes/User';
 
-xdescribe('Bot', () => {
+describe('Bot', () => {
   let name, user, bot, phrase, response, initialGreeting;
 
   beforeEach(() => {
@@ -36,13 +36,13 @@ xdescribe('Bot', () => {
     });
   });
 
-  xdescribe('initialGreeting', () => {
+  describe('initialGreeting', () => {
     it('should greet the user', () => {
       expect(bot.initialGreeting()).toBe(initialGreeting);
     });
   });
 
-  xdescribe('registerPredeterminedResponse', () => {
+  describe('registerPredeterminedResponse', () => {
     it('should add a predeterminedResponse object to the predetermined responses', () => {
       bot.registerPredeterminedResponse(phrase, response);
       let firstPredeterminedResponse = bot.predeterminedResponses[0];
@@ -53,7 +53,7 @@ xdescribe('Bot', () => {
     });
   });
 
-  xdescribe('respondToMessage', () => {
+  describe('respondToMessage', () => {
     let overallPositiveMessage,
         overallNegativeMessage,
         overallNeutralMessage,

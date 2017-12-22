@@ -1,6 +1,6 @@
 import User from 'classes/User';
 
-xdescribe('User', () => {
+describe('User', () => {
   let firstName, lastName, user, fullName;
 
   beforeEach(() => {
@@ -24,7 +24,7 @@ xdescribe('User', () => {
     });
   });
 
-  xdescribe('fullName', () => {
+  describe('fullName', () => {
     it('should return a full name', () => {
       expect(user.fullName()).toEqual(fullName);
     });
