@@ -1,0 +1,9 @@
+---
+title: "Test Driving with Enzyme"
+type: "challenge"
+description: "Test drive the creation of a futuristic car using Enzyme"
+tags: "javascript, react, karma, jasmine, enzyme"
+ignore:
+- "node_modules/"
+- "coverage/"
+- "test-driving-with-enzyme.md"
