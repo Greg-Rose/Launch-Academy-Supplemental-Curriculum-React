@@ -7,4 +7,5 @@ behaviors:
   - react_on_node
 ignore:
 - "node_modules/"
+- "coverage/"
 - "launch-academy-faq.md"
