@@ -1,0 +1,9 @@
+---
+title: "Flux Calculator"
+type: "exercise"
+description: "Create a calculator application using Flux"
+tags: "javascript, react, flux"
+ignore:
+- "node_modules/"
+- "coverage/"
+- "flux-calculator.md"
